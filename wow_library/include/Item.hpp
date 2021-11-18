@@ -59,6 +59,9 @@ enum class Set
     doomplate,
     warbringer,
     destroyer,
+    onslaught,
+    the_fists_of_fury,
+    the_twin_blades_of_azzinoth,
 };
 
 /* enum class Gem_bonus
@@ -166,6 +169,7 @@ public:
     struct Proc_type {
         static constexpr uint8_t hits = (uint8_t)Hit_result::glancing | (uint8_t)Hit_result::crit | (uint8_t)Hit_result::hit;
         static constexpr uint8_t crits = (uint8_t)Hit_result::crit;
+        static constexpr uint8_t non_crits = (uint8_t)Hit_result::glancing | (uint8_t)Hit_result::hit;
     };
 
     Hit_effect() = default;

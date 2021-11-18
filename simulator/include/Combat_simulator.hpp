@@ -391,6 +391,8 @@ private:
 
     bool has_warbringer_4_set_{};
     bool has_destroyer_2_set_{};
+    bool has_onslaught_2_set_{};
+    bool has_onslaught_4_set_{};
 
     Over_time_effect deep_wound_effect_{"deep_wound", {}, 0, 0, 3, 12};
     Hit_effect battle_stance_{"battle_stance", Hit_effect::Type::stat_boost, {}, {-3.0, 0, 0}, 0, 1.5, 0, 0};

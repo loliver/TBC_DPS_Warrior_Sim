@@ -36,7 +36,7 @@ Combat_simulator::Combat_simulator(const Combat_simulator_config& config) : conf
 
 void Combat_simulator::add_talent_effects(const Character& character)
 {
-    execute_rage_cost_ = std::vector<int>{15, 13, 10}[character.talents.improved_execute];
+    execute_rage_cost_ = std::vector<int>{15, 13, 10}[character.talents.improved_execute] - 3 * has_onslaught_2_set_;
     heroic_strike_rage_cost_ = 15 - character.talents.improved_heroic_strike;
     whirlwind_rage_cost_ = 25;
     mortal_strike_rage_cost_ = 30;
@@ -430,7 +430,7 @@ void Combat_simulator::mortal_strike(Sim_state& state)
         return;
     }
     logger_.print("Mortal Strike!");
-    double damage = (state.main_hand_weapon.normalized_swing(state.special_stats) + 210) * (100 + state.talents.improved_mortal_strike) / 100;
+    double damage = (state.main_hand_weapon.normalized_swing(state.special_stats) + 210) * (100 + state.talents.improved_mortal_strike) / 100 * (100 + 15 * has_onslaught_4_set_) / 100;
     const auto& hit_outcome = generate_hit(state, state.main_hand_weapon, hit_table_yellow_mh_, damage);
     if (hit_outcome.hit_result == Hit_result::miss || hit_outcome.hit_result == Hit_result::dodge)
     {
@@ -463,7 +463,7 @@ void Combat_simulator::bloodthirst(Sim_state& state)
     }
     logger_.print("Bloodthirst!");
     // logger_.print("(DEBUG) AP: ", special_stats.attack_power);
-    double damage = state.special_stats.attack_power * 0.45 + state.special_stats.bonus_damage;
+    double damage = (state.special_stats.attack_power * 0.45 + state.special_stats.bonus_damage) * (100 + 15 * has_onslaught_4_set_) / 100;
     const auto& hit_outcome = generate_hit(state, state.main_hand_weapon, hit_table_yellow_mh_, damage);
     if (hit_outcome.hit_result == Hit_result::miss || hit_outcome.hit_result == Hit_result::dodge)
     {
@@ -1000,6 +1000,8 @@ void Combat_simulator::simulate(const Character& character, const std::function<
         mortal_strike_rage_cost_ = 25;
         bloodthirst_rage_cost_ = 25;
     }
+    has_onslaught_2_set_ = character.has_set_bonus(Set::onslaught, 2);
+    has_onslaught_4_set_ = character.has_set_bonus(Set::onslaught, 4);
 
     const bool is_dual_wield = character.is_dual_wield();
 
