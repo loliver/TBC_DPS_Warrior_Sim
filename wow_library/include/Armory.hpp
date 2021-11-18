@@ -746,9 +746,11 @@ struct Armory
                 // main_hand / one_hand
                 {"blade_of_savagery", Attributes{0.0, 0.0}, Special_stats{0.996376811594203, 0.9511731135066582, 44.0, 0, 0.0}, 1.4, 98, 183, Weapon_socket::one_hand, Weapon_type::sword}, 
                 {"warglaive_of_azzinoth_mh", Attributes{0.0, 22.0}, Special_stats{0.0, 1.3316423589093216, 44.0, 0, 0.0}, 2.8, 214, 398, Weapon_socket::main_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth},
+                {"warglaive_of_azzinoth_mh_non_demon", Attributes{0.0, 22.0}, Special_stats{0.0, 1.3316423589093216, 44.0, 0, 0.0}, 2.8, 214, 398, Weapon_socket::main_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth_non_demon},
                 {"blade_of_infamy", Attributes{0.0, 28.0}, Special_stats{0.0, 0.0, 56.0, 0, 0.0}, 2.6, 182, 339, Weapon_socket::one_hand, Weapon_type::sword},
                 // off_hand
                 {"warglaive_of_azzinoth_oh", Attributes{0.0, 0.0}, Special_stats{1.0416666666666667, 0.0, 44, 0, 0.0}, 1.4, 107, 199, Weapon_socket::off_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth},
+                {"warglaive_of_azzinoth_oh_non_demon", Attributes{0.0, 0.0}, Special_stats{1.0416666666666667, 0.0, 44, 0, 0.0}, 1.4, 107, 199, Weapon_socket::off_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth_non_demon},
            };
 
 
@@ -943,6 +945,8 @@ struct Armory
         {Set::onslaught, 4, "onslaught-4pc (4t6)"},
         {Set::the_fists_of_fury, 2, "the_fists_of_fury", {}, {}, {"the_fists_of_fury", Hit_effect::Type::damage_magic, {}, {}, 125, 0, 0, 0, 0, 0, 0, 0, 1}},
         {Set::the_twin_blades_of_azzinoth, 2, "the_twin_blades_of_azzinoth", {}, {0, 0, 200}, {"the_twin_blades_of_azzinoth", Hit_effect::Type::stat_boost, {}, {0, 0, 0, 0, 0.2853519341}, 0, 10, 45, 0, 0, 0, 0, 0, 1}},
+        {Set::the_twin_blades_of_azzinoth_non_demon, 2, "the_twin_blades_of_azzinoth_non_demon", {}, {}, {"the_twin_blades_of_azzinoth_non_demon", Hit_effect::Type::stat_boost, {}, {0, 0, 0, 0, 0.2853519341}, 0, 10, 45, 0, 0, 0, 0, 0, 1}},
+        
     };
 
     [[nodiscard]] const std::vector<Armor>& get_items_in_socket(Socket socket) const;

@@ -62,6 +62,7 @@ enum class Set
     onslaught,
     the_fists_of_fury,
     the_twin_blades_of_azzinoth,
+    the_twin_blades_of_azzinoth_non_demon,
 };
 
 /* enum class Gem_bonus
