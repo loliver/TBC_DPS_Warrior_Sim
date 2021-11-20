@@ -671,6 +671,11 @@ void Combat_simulator::hit_effects(Sim_state& state, Hit_result hit_result, Weap
 
         if (!hit_effect.is_procced_by(hit_result))
         {
+            // darkmoon_card_wrath charges are removed on any crit hit
+            if (hit_effect.name == "darkmoon_card_wrath")
+            {
+                buff_manager_.remove_charge(hit_effect, time_keeper_.time, logger_);
+            }
             continue;
         }
 

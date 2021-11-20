@@ -186,9 +186,9 @@ public:
         duration(to_millis(duration)),
         cooldown(to_millis(cooldown)),
         probability(probability),
-        proc_type(proc_type), // unused
+        proc_type(proc_type),
         max_charges(max_charges),
-        armor_reduction(armor_reduction), // unused
+        armor_reduction(armor_reduction),
         ppm(ppm),
         affects_both_weapons(affects_both_weapons), // unused
         max_stacks(max_stacks) {}
