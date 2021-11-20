@@ -430,7 +430,7 @@ void Combat_simulator::mortal_strike(Sim_state& state)
         return;
     }
     logger_.print("Mortal Strike!");
-    double damage = (state.main_hand_weapon.normalized_swing(state.special_stats) + 210) * (100 + state.talents.improved_mortal_strike) / 100 * (100 + 15 * has_onslaught_4_set_) / 100;
+    double damage = (state.main_hand_weapon.normalized_swing(state.special_stats) + 210) * (100 + state.talents.improved_mortal_strike) / 100 * (100 + 5 * has_onslaught_4_set_) / 100;
     const auto& hit_outcome = generate_hit(state, state.main_hand_weapon, hit_table_yellow_mh_, damage);
     if (hit_outcome.hit_result == Hit_result::miss || hit_outcome.hit_result == Hit_result::dodge)
     {
@@ -463,7 +463,7 @@ void Combat_simulator::bloodthirst(Sim_state& state)
     }
     logger_.print("Bloodthirst!");
     // logger_.print("(DEBUG) AP: ", special_stats.attack_power);
-    double damage = (state.special_stats.attack_power * 0.45 + state.special_stats.bonus_damage) * (100 + 15 * has_onslaught_4_set_) / 100;
+    double damage = (state.special_stats.attack_power * 0.45 + state.special_stats.bonus_damage) * (100 + 5 * has_onslaught_4_set_) / 100;
     const auto& hit_outcome = generate_hit(state, state.main_hand_weapon, hit_table_yellow_mh_, damage);
     if (hit_outcome.hit_result == Hit_result::miss || hit_outcome.hit_result == Hit_result::dodge)
     {

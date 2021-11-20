@@ -665,7 +665,7 @@ struct Armory
                 {"crystalforged_trinket", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0, 0, 0.0, 0, 0, 7}, Socket::trinket, Set::none, {}, {{"crystalforged_trinket", Use_effect::Effect_socket::shared, {0,  0}, {0, 0, 216}, 0, 10, 60, true}}},
 
                 // Phase 3
-                {"madness_of_the_betrayer", Attributes{0.0, 0.0}, Special_stats{0.0, 1.2682308180088777, 84.0, 0, 0.0}, Socket::trinket, Set::none, {{"madness_of_the_betrayer", Hit_effect::Type::reduce_armor, {}, {}, 0, 10, 0, 0, 0, 0, 300, 0, 1}}}, 
+                {"madness_of_the_betrayer", Attributes{0.0, 0.0}, Special_stats{0.0, 1.2682308180088777, 84.0, 0, 0.0}, Socket::trinket, Set::none, {{"madness_of_the_betrayer", Hit_effect::Type::reduce_armor, {}, {}, 0, 10, 0, 0, 0, 1, 300, 1, 1}}}, 
                 // {"ashtongue_talisman_of_valor", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.0}, Socket::trinket}, // TODO: This thing could only proc with MS / BT which complicate the implementation
                 {"darkmoon_card_crusade", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0}, Socket::trinket, Set::none, {{"darkmoon_card_crusade", Hit_effect::Type::stat_boost, {}, {0, 0, 6}, 0, 10, 0, 1, 0, 1, 0, 20}}},
                 {"darkmoon_card_wrath", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.0}, Socket::trinket, Set::none, {{"darkmoon_card_wrath", Hit_effect::Type::stat_boost, {}, {0.7699275362, 0, 0}, 0, 10, 0, 1, Hit_effect::Proc_type::non_crits}}}, 
@@ -810,7 +810,7 @@ struct Armory
                 {"devastation", Attributes{0.0, 0.0}, Special_stats{2.264492754, 0.0, 150.0, 0, 0.0}, 3.9, 496, 744, Weapon_socket::two_hand, Weapon_type::axe, {{"devastation", Hit_effect::Type::stat_boost, {}, {0, 0, 0, 0, .2}, 0, 10, 0, 0.5}}},
 
                 // Phase 3
-                {"halbred_of_desolation", Attributes{0.0, 51.0}, Special_stats{0.0, 1.9023462270133165, 100.0, 0, 0.0}, 3.5, 365, 548, Weapon_socket::two_hand, Weapon_type::axe}, 
+                {"halberd_of_desolation", Attributes{0.0, 51.0}, Special_stats{0.0, 1.9023462270133165, 100.0, 0, 0.0}, 3.5, 365, 548, Weapon_socket::two_hand, Weapon_type::axe}, 
                 {"soul_cleaver", Attributes{65.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 315.0}, 3.7, 386, 579, Weapon_socket::two_hand, Weapon_type::axe},
             };
 
