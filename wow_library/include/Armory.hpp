@@ -748,6 +748,8 @@ struct Armory
                 {"warglaive_of_azzinoth_mh", Attributes{0.0, 22.0}, Special_stats{0.0, 1.3316423589093216, 44.0, 0, 0.0}, 2.8, 214, 398, Weapon_socket::main_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth},
                 {"warglaive_of_azzinoth_mh_non_demon", Attributes{0.0, 22.0}, Special_stats{0.0, 1.3316423589093216, 44.0, 0, 0.0}, 2.8, 214, 398, Weapon_socket::main_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth_non_demon},
                 {"blade_of_infamy", Attributes{0.0, 28.0}, Special_stats{0.0, 0.0, 56.0, 0, 0.0}, 2.6, 182, 339, Weapon_socket::one_hand, Weapon_type::sword},
+                {"vengeful_gladiators_slicer", Attributes{0.0, 0.0}, Special_stats{0.9510869565, 0.5072923272, 34.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 49}, 2.6, 214, 322, Weapon_socket::one_hand, Weapon_type::sword}, 
+                {"vengeful_gladiators_quickblade", Attributes{0.0, 0.0}, Special_stats{0.9510869565, 0.5072923272, 34.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 49}, 1.5, 108, 201, Weapon_socket::one_hand, Weapon_type::sword}, 
                 // off_hand
                 {"warglaive_of_azzinoth_oh", Attributes{0.0, 0.0}, Special_stats{1.0416666666666667, 0.0, 44, 0, 0.0}, 1.4, 107, 199, Weapon_socket::off_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth},
                 {"warglaive_of_azzinoth_oh_non_demon", Attributes{0.0, 0.0}, Special_stats{1.0416666666666667, 0.0, 44, 0, 0.0}, 1.4, 107, 199, Weapon_socket::off_hand, Weapon_type::sword, {}, Set::the_twin_blades_of_azzinoth_non_demon},
@@ -775,7 +777,8 @@ struct Armory
                 {"merciless_gladiators_greatsword", Attributes{42.0, 0.0}, Special_stats{1.9021739130434785, 1.14140773620799, 0.0, 0, 0.0}, 3.6, 365, 549, Weapon_socket::two_hand, Weapon_type::sword}, 
 
                 // Phase 3
-                {"cataclysms_edge", Attributes{75.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 335.0}, 3.5, 386, 580, Weapon_socket::two_hand, Weapon_type::sword},
+                {"cataclysms_edge", Attributes{75.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 335}, 3.5, 386, 580, Weapon_socket::two_hand, Weapon_type::sword},
+                {"vengeful_gladiators_greatsword", Attributes{46.0, 0.0}, Special_stats{2.083333333, 0.9511731135, 0.0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 98}, 3.6, 386, 580, Weapon_socket::one_hand, Weapon_type::sword}, 
             };
 
     std::vector<Weapon> two_handed_axes_polearm_t
@@ -812,6 +815,7 @@ struct Armory
                 // Phase 3
                 {"halberd_of_desolation", Attributes{0.0, 51.0}, Special_stats{0.0, 1.9023462270133165, 100.0, 0, 0.0}, 3.5, 365, 548, Weapon_socket::two_hand, Weapon_type::axe}, 
                 {"soul_cleaver", Attributes{65.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 315.0}, 3.7, 386, 579, Weapon_socket::two_hand, Weapon_type::axe},
+                {"vengeful_gladiators_decapitator", Attributes{0.0, 0.0}, Special_stats{2.083333333, 0.9511731135, 92.0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 98}, 3.6, 386, 580, Weapon_socket::one_hand, Weapon_type::axe}, 
             };
 
     std::vector<Weapon> two_handed_maces_t
@@ -856,6 +860,8 @@ struct Armory
                 // main_hand / one_hand
                 {"rising_tide", Attributes{0.0, 0.0}, Special_stats{0.0, 1.3316423589093216, 44.0, 0, 0.0}, 2.6, 208, 313, Weapon_socket::one_hand, Weapon_type::axe}, 
                 {"the_brutalizer", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 5.326569435637286}, 1.6, 128, 193, Weapon_socket::one_hand, Weapon_type::axe}, 
+                {"vengeful_gladiators_cleaver", Attributes{0.0, 0.0}, Special_stats{0.9510869565, 0.5072923272, 34.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 49}, 2.6, 214, 322, Weapon_socket::one_hand, Weapon_type::axe}, 
+                {"vengeful_gladiators_hacker", Attributes{0.0, 0.0}, Special_stats{0.9510869565, 0.5072923272, 34.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 49}, 1.5, 108, 201, Weapon_socket::one_hand, Weapon_type::axe}, 
             };
 
     std::vector<Weapon> daggers_t
@@ -880,7 +886,7 @@ struct Armory
                 {"messenger_of_fate", Attributes{0.0, 22.0}, Special_stats{0.0, 0.0, 44.0, 0, 0.0}, 1.4, 112, 169, Weapon_socket::one_hand, Weapon_type::dagger}, 
                 {"shard_of_azzinoth", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 64.0, 0, 0.0}, 1.9, 161, 242, Weapon_socket::one_hand, Weapon_type::dagger}, 
                 {"trackers_blade", Attributes{0.0, 0.0}, Special_stats{1.0416666666666667, 1.2682308180088777, 44.0, 0, 0.0}, 1.5, 105, 196, Weapon_socket::one_hand, Weapon_type::dagger}, 
-                {"boundless_agony", Attributes{0.0, 0.0}, Special_stats{1.0869565217391306, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 210.0}, 1.8, 144, 217, Weapon_socket::one_hand, Weapon_type::dagger}, 
+                {"boundless_agony", Attributes{0.0, 0.0}, Special_stats{1.0869565217391306, 0.0, 0.0, 0, 0.00, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 210}, 1.8, 144, 217, Weapon_socket::one_hand, Weapon_type::dagger}, 
             };
 
     std::vector<Weapon> maces_t
