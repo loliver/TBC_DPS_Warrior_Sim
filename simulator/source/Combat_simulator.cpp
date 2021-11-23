@@ -444,7 +444,7 @@ void Combat_simulator::mortal_strike(Sim_state& state)
     {
         spend_rage(mortal_strike_rage_cost_);
         maybe_gain_flurry(hit_outcome.hit_result, state.flurry_charges, state.special_stats);
-        hit_effects(state, hit_outcome.hit_result, state.main_hand_weapon);
+        hit_effects(state, hit_outcome.hit_result, state.main_hand_weapon, Hit_type::spell, Extra_attack_type::all, Special_type::ms_bt);
     }
     time_keeper_.mortal_strike_cast(6000 - state.talents.improved_mortal_strike * 200);
     time_keeper_.global_cast(1500);
@@ -477,7 +477,7 @@ void Combat_simulator::bloodthirst(Sim_state& state)
     {
         spend_rage(bloodthirst_rage_cost_);
         maybe_gain_flurry(hit_outcome.hit_result, state.flurry_charges, state.special_stats);
-        hit_effects(state, hit_outcome.hit_result, state.main_hand_weapon);
+        hit_effects(state, hit_outcome.hit_result, state.main_hand_weapon, Hit_type::spell, Extra_attack_type::all, Special_type::ms_bt);
     }
     time_keeper_.blood_thirst_cast(6000);
     time_keeper_.global_cast(1500);
@@ -651,7 +651,7 @@ void Combat_simulator::sunder_armor(Sim_state& state)
 }
 
 void Combat_simulator::hit_effects(Sim_state& state, Hit_result hit_result, Weapon_sim& weapon, Hit_type hit_type,
-                                   Extra_attack_type extra_attack_type)
+                                   Extra_attack_type extra_attack_type, Special_type special_type)
 {
     maybe_add_rampage_stack(Hit_result::hit, state.rampage_stacks, state.special_stats);
 
@@ -737,6 +737,12 @@ void Combat_simulator::hit_effects(Sim_state& state, Hit_result hit_result, Weap
             {
                 hit_effects(state, hit_outcome.hit_result, state.main_hand_weapon);
             }
+            break;
+        }
+        case Hit_effect::Type::ashtongue_talisman_of_valor: {
+            if (special_type != Special_type::ms_bt) break;
+            on_proc(hit_effect, "PROC: ", hit_effect.name, " stats increased for ", hit_effect.duration * 0.001, "s");
+            buff_manager_.add_combat_buff(hit_effect, time_keeper_.time);
             break;
         }
         default:

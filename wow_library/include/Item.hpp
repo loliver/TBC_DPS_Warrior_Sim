@@ -164,6 +164,7 @@ public:
         damage_magic,
         reduce_armor, // deprecated
         rage_boost,
+        ashtongue_talisman_of_valor,
     };
 
     // TODO(vigo) turn into an enum class; it's uint8_t for now, so there's fewer Armory changes

@@ -666,7 +666,7 @@ struct Armory
 
                 // Phase 3
                 {"madness_of_the_betrayer", Attributes{0.0, 0.0}, Special_stats{0.0, 1.2682308180088777, 84.0, 0, 0.0}, Socket::trinket, Set::none, {{"madness_of_the_betrayer", Hit_effect::Type::reduce_armor, {}, {}, 0, 10, 0, 0, 0, 1, 300, 1, 1}}}, 
-                // {"ashtongue_talisman_of_valor", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.0}, Socket::trinket}, // TODO: This thing could only proc with MS / BT which complicate the implementation
+                {"ashtongue_talisman_of_valor", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.0}, Socket::trinket, Set::none, {{"ashtongue_talisman_of_valor", Hit_effect::Type::ashtongue_talisman_of_valor, {55, 0}, {}, 0, 12, 0, .25}}},
                 {"darkmoon_card_crusade", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0}, Socket::trinket, Set::none, {{"darkmoon_card_crusade", Hit_effect::Type::stat_boost, {}, {0, 0, 6}, 0, 10, 0, 1, 0, 1, 0, 20}}},
                 {"darkmoon_card_wrath", Attributes{0.0, 0.0}, Special_stats{0.0, 0.0, 0.0, 0, 0.0}, Socket::trinket, Set::none, {{"darkmoon_card_wrath", Hit_effect::Type::stat_boost, {}, {0.7699275362, 0, 0}, 0, 10, 0, 1, Hit_effect::Proc_type::non_crits, 0, 0, 130}}}, 
             };

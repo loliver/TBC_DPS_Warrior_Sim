@@ -37,6 +37,12 @@ public:
         all, // may proc anything (e.g. Blinkstrike on a spell hit)
     };
 
+    enum class Special_type
+    {
+        none,
+        ms_bt,
+    };
+
     struct Ability_queue_manager
     {
         [[nodiscard]] bool is_ability_queued() const { return heroic_strike_queued || cleave_queued; }
@@ -226,7 +232,8 @@ public:
         logger_.print(args...);
     }
 
-    void hit_effects(Sim_state& state, Hit_result hit_result, Weapon_sim& weapon, Hit_type hit_type = Hit_type::spell, Extra_attack_type extra_attack_type = Extra_attack_type::all);
+    void hit_effects(Sim_state& state, Hit_result hit_result, Weapon_sim& weapon, Hit_type hit_type = Hit_type::spell, Extra_attack_type extra_attack_type = Extra_attack_type::all,
+                    Special_type special_type = Special_type::none);
 
     void overpower(Sim_state& state);
 
