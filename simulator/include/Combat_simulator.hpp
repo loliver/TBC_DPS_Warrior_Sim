@@ -30,11 +30,12 @@ public:
         spell,
     };
 
-    enum class Extra_attack_type
+    struct Extra_attack_chain
     {
-        none, // may proc no extra attacks (Sword Spec, Windfury Totem)
-        self, // may proc itself (e.g. Blinkstrike on a melee/next melee hit)
-        all, // may proc anything (e.g. Blinkstrike on a spell hit)
+        Extra_attack_chain() = default;
+
+        bool windfury;
+        bool sword_spec;
     };
 
     enum class Special_type
@@ -65,8 +66,8 @@ public:
             cleave_queued = false;
         }
 
-        bool heroic_strike_queued{false};
-        bool cleave_queued{false};
+        bool heroic_strike_queued{};
+        bool cleave_queued{};
     };
 
     struct Slam_manager
@@ -222,7 +223,7 @@ public:
     void maybe_add_rampage_stack(Hit_result hit_result, int& rampage_stacks, Special_stats& special_stats);
     void unbridled_wrath(Sim_state& state, const Weapon_sim& weapon);
 
-    void swing_main_hand(Sim_state& state, Extra_attack_type extra_attack_type = Extra_attack_type::all);
+    void swing_main_hand(Sim_state& state, Extra_attack_chain chain = {});
     void swing_off_hand(Sim_state& state);
 
     // template helper for hit_effects()
@@ -232,7 +233,7 @@ public:
         logger_.print(args...);
     }
 
-    void hit_effects(Sim_state& state, Hit_result hit_result, Weapon_sim& weapon, Hit_type hit_type = Hit_type::spell, Extra_attack_type extra_attack_type = Extra_attack_type::all,
+    void hit_effects(Sim_state& state, Hit_result hit_result, Weapon_sim& weapon, Hit_type hit_type = Hit_type::spell, Extra_attack_chain chain = {},
                     Special_type special_type = Special_type::none);
 
     void overpower(Sim_state& state);
